@@ -1,0 +1,42 @@
+import React, { useEffect } from 'react';
+import { createRoot } from 'react-dom/client';
+import App from './App.jsx';
+import './styles.css';
+
+function initScrollReveal() {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.08, rootMargin: '0px 0px -40px 0px' },
+  );
+
+  document
+    .querySelectorAll('.section, .audience-card, .reason-card, .product-card, .bundle-row, .category-card, .offer-card')
+    .forEach((el) => {
+      if (!el.classList.contains('reveal')) el.classList.add('reveal');
+      observer.observe(el);
+    });
+}
+
+function Root() {
+  useEffect(() => {
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+    requestAnimationFrame(initScrollReveal);
+  }, []);
+
+  return <App />;
+}
+
+// StrictMode is disabled in production builds automatically by React,
+// but we remove it here too to prevent double-invocation of effects
+// (and accidental double Meta Pixel event firing) in dev builds.
+createRoot(document.getElementById('root')).render(<Root />);
