@@ -111,14 +111,16 @@ export default function OfferCard({
         {/* Price row */}
         {hasPrice && (
           <div className="ht-card__price-row">
-            <span className="ht-card__price">
-              {formatPrice(offer.price * displayQty)}
-            </span>
-            {Number.isFinite(offer.originalPrice) && (
-              <s className="ht-card__original">
-                {formatPrice(offer.originalPrice * displayQty)}
-              </s>
-            )}
+            <div className="ht-card__price-main">
+              <span className="ht-card__price">
+                {formatPrice(offer.price * displayQty)}
+              </span>
+              {Number.isFinite(offer.originalPrice) && (
+                <s className="ht-card__original">
+                  بدل {formatPrice(offer.originalPrice * displayQty)}
+                </s>
+              )}
+            </div>
             {Number.isFinite(offer.saving) && offer.saving > 0 && (
               <span className="ht-card__saving">
                 وفر {formatPrice(offer.saving * displayQty)}

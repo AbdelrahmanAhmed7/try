@@ -683,19 +683,27 @@ img {
   font-weight: 600;
 }
 
-/* Price row */
+/* Price row — consistent across all cards for at-a-glance comparison */
 .ht-card__price-row {
   display: flex;
-  align-items: center;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-start;
   gap: 6px;
-  margin-top: 2px;
+  margin-top: 4px;
+}
+
+.ht-card__price-main {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
 }
 
 .ht-card__price {
-  font-size: 1.15rem;
+  font-size: 1.4rem;
   font-weight: 900;
   color: var(--card-accent, var(--purple-700));
+  line-height: 1.1;
 }
 
 .ht-card__original {
@@ -705,12 +713,13 @@ img {
 }
 
 .ht-card__saving {
-  font-size: 0.72rem;
-  font-weight: 800;
-  color: var(--green);
-  background: rgba(79, 141, 66, 0.10);
-  padding: 2px 8px;
+  font-size: 0.78rem;
+  font-weight: 900;
+  color: #fff;
+  background: var(--green);
+  padding: 3px 10px;
   border-radius: 50px;
+  white-space: nowrap;
 }
 
 /* Action row — pushed to bottom */
@@ -803,22 +812,6 @@ img {
 
 .ht-card--featured .ht-card__desc {
   font-size: 0.78rem;
-}
-
-.ht-card--featured .ht-card__price {
-  font-size: 1.35rem;
-  color: #c07a00;
-}
-
-.ht-card--featured .ht-card__original {
-  font-size: 0.85rem;
-}
-
-.ht-card--featured .ht-card__saving {
-  font-size: 0.78rem;
-  padding: 3px 10px;
-  background: var(--green);
-  color: #fff;
 }
 
 .ht-card--featured .ht-card__atc {
@@ -3008,7 +3001,7 @@ h3 {
   .ht-card__body { padding: 10px 12px 12px; }
   .ht-card__title { font-size: 0.88rem; }
   .ht-card__amount, .ht-card__desc { font-size: 0.76rem; }
-  .ht-card__price { font-size: 1rem; }
+  .ht-card__price { font-size: 1.2rem; }
   .ht-card__atc { font-size: 0.82rem; min-height: 44px; }
 
   .section {
