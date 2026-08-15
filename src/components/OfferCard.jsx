@@ -98,6 +98,10 @@ export default function OfferCard({
           : null
         }
 
+        {offer.unit && (
+          <p className="ht-card__unit">{offer.unit}</p>
+        )}
+
         {featured && offer.amount && offer.description && (
           <p className="ht-card__desc">{offer.description}</p>
         )}
@@ -108,54 +112,59 @@ export default function OfferCard({
           </p>
         )}
 
-        {/* Price row */}
-        {hasPrice && (
-          <div className="ht-card__price-row">
-            <div className="ht-card__price-main">
-              <span className="ht-card__price">
-                {formatPrice(offer.price * displayQty)}
-              </span>
-              {Number.isFinite(offer.originalPrice) && (
-                <s className="ht-card__original">
-                  بدل {formatPrice(offer.originalPrice * displayQty)}
-                </s>
+        {/* Footer — price + action pinned to the bottom for consistent alignment */}
+        <div className="ht-card__footer">
+
+          {/* Price row */}
+          {hasPrice && (
+            <div className="ht-card__price-row">
+              <div className="ht-card__price-main">
+                <span className="ht-card__price">
+                  {formatPrice(offer.price * displayQty)}
+                </span>
+                {Number.isFinite(offer.originalPrice) && (
+                  <s className="ht-card__original">
+                    بدل {formatPrice(offer.originalPrice * displayQty)}
+                  </s>
+                )}
+              </div>
+              {Number.isFinite(offer.saving) && offer.saving > 0 && (
+                <span className="ht-card__saving">
+                  وفر {formatPrice(offer.saving * displayQty)}
+                </span>
               )}
             </div>
-            {Number.isFinite(offer.saving) && offer.saving > 0 && (
-              <span className="ht-card__saving">
-                وفر {formatPrice(offer.saving * displayQty)}
-              </span>
-            )}
-          </div>
-        )}
+          )}
 
-        {/* Action */}
-        <div className="ht-card__action" onClick={(e) => e.stopPropagation()}>
-          {interactive ? (
-            inCart ? (
-              <QtyStepper
-                qty={qty}
-                onChange={(val) => onChangeQty(offer.id, val)}
-              />
-            ) : (
-              <button
-                type="button"
-                className="ht-card__atc"
-                onClick={handleAdd}
-                aria-label={`أضف ${offer.title} للسلة`}
+          {/* Action */}
+          <div className="ht-card__action" onClick={(e) => e.stopPropagation()}>
+            {interactive ? (
+              inCart ? (
+                <QtyStepper
+                  qty={qty}
+                  onChange={(val) => onChangeQty(offer.id, val)}
+                />
+              ) : (
+                <button
+                  type="button"
+                  className="ht-card__atc"
+                  onClick={handleAdd}
+                  aria-label={`أضف ${offer.title} للسلة`}
+                >
+                  أضف للسلة
+                </button>
+              )
+            ) : staticCta ? (
+              <a
+                href="#shop"
+                className="ht-card__atc ht-card__atc--ghost"
+                onClick={(e) => e.stopPropagation()}
               >
-                أضف للسلة
-              </button>
-            )
-          ) : staticCta ? (
-            <a
-              href="#shop"
-              className="ht-card__atc ht-card__atc--ghost"
-              onClick={(e) => e.stopPropagation()}
-            >
-              {staticCta}
-            </a>
-          ) : null}
+                {staticCta}
+              </a>
+            ) : null}
+          </div>
+
         </div>
 
       </div>

@@ -683,6 +683,20 @@ img {
   font-weight: 600;
 }
 
+/* Unit spec chip — jar weight / can size, consistent across cards */
+.ht-card__unit {
+  margin: 0;
+  align-self: flex-start;
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: var(--purple-700);
+  background: rgba(95, 45, 145, 0.08);
+  border: 1px solid rgba(95, 45, 145, 0.14);
+  padding: 2px 8px;
+  border-radius: 50px;
+  line-height: 1.4;
+}
+
 /* Price row — consistent across all cards for at-a-glance comparison */
 .ht-card__price-row {
   display: flex;
@@ -722,10 +736,13 @@ img {
   white-space: nowrap;
 }
 
-/* Action row — pushed to bottom */
-.ht-card__action {
+/* Footer — keeps price + action aligned at the same line across all cards */
+.ht-card__footer {
   margin-top: auto;
   padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
 .ht-card__atc {
@@ -2395,6 +2412,16 @@ h3 {
   font-weight: 600;
 }
 
+.confirm-unit {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 50px;
+  background: rgba(95, 45, 145, 0.08);
+  border: 1px solid rgba(95, 45, 145, 0.14);
+  color: var(--purple-700) !important;
+  font-weight: 800 !important;
+}
+
 .confirm-price {
   display: flex;
   align-items: baseline;
@@ -3001,6 +3028,7 @@ h3 {
   .ht-card__body { padding: 10px 12px 12px; }
   .ht-card__title { font-size: 0.88rem; }
   .ht-card__amount, .ht-card__desc { font-size: 0.76rem; }
+  .ht-card__unit { font-size: 0.66rem; }
   .ht-card__price { font-size: 1.2rem; }
   .ht-card__atc { font-size: 0.82rem; min-height: 44px; }
 
