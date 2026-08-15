@@ -58,7 +58,7 @@ export default function StoreHero({ onSelectCategory }) {
         <span className="se-eyebrow">Healthy &amp; Tasty</span>
         <h1 className="se-hero__headline">اختار اللي يناسبك</h1>
         <p className="se-hero__desc">
-          منتجات صحية بطعم تحبه، من Healthy Spread وHealthy Cola لحد الباقات المختارة.
+          منتجات صحية بطعم تحبه — حدد العرض اللي يناسبك واطلب دلوقتي.
         </p>
       </div>
 

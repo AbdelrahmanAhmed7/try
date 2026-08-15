@@ -832,158 +832,6 @@ img {
 }
 
 /* ════════════════════════════════════════════════════════
-   TRUST SECTION — brand reassurance strip
-   Isolated: all styles use ht-trust- prefix.
-   Remove by deleting TrustSection.jsx + its import.
-   ════════════════════════════════════════════════════════ */
-
-.ht-trust {
-  border-top: 1px solid rgba(95, 45, 145, 0.08);
-  background: var(--cream);
-}
-
-.ht-trust__inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: clamp(32px, 4.5vw, 56px) clamp(16px, 4vw, 48px);
-}
-
-.ht-trust__header {
-  text-align: center;
-  margin-bottom: clamp(24px, 3.5vw, 40px);
-}
-
-.ht-trust__heading {
-  margin: 0 0 6px;
-  font-size: clamp(1.3rem, 2.4vw, 1.75rem);
-  font-weight: 900;
-  color: var(--purple-950);
-}
-
-.ht-trust__sub {
-  margin: 0;
-  color: var(--muted);
-  font-size: 0.9rem;
-  font-weight: 600;
-}
-
-/* ── 4-item horizontal grid ── */
-.ht-trust__grid {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0;
-  border: 1px solid rgba(95, 45, 145, 0.10);
-  border-radius: 16px;
-  overflow: hidden;
-}
-
-.ht-trust__item {
-  position: relative;
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
-  padding: clamp(18px, 2.5vw, 28px) clamp(14px, 2vw, 24px);
-}
-
-/* Separator between items (right border on RTL) */
-.ht-trust__item + .ht-trust__item {
-  border-right: 1px solid rgba(95, 45, 145, 0.09);
-}
-
-/* The sep span is only in DOM for structure — border via CSS instead */
-.ht-trust__sep { display: none; }
-
-.ht-trust__icon {
-  flex-shrink: 0;
-  width: 36px;
-  height: 36px;
-  display: grid;
-  place-items: center;
-  border-radius: 10px;
-  background: rgba(95, 45, 145, 0.08);
-  color: var(--purple-700);
-}
-
-.ht-trust__icon svg {
-  width: 18px;
-  height: 18px;
-}
-
-.ht-trust__text {
-  min-width: 0;
-}
-
-.ht-trust__title {
-  display: block;
-  font-size: 0.95rem;
-  font-weight: 900;
-  color: var(--purple-950);
-  margin-bottom: 4px;
-  line-height: 1.3;
-}
-
-.ht-trust__desc {
-  margin: 0;
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--muted);
-  line-height: 1.6;
-}
-
-/* ── Tablet: 2×2 grid ── */
-@media (max-width: 768px) {
-  .ht-trust__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .ht-trust__item:nth-child(n+3) {
-    border-top: 1px solid rgba(95, 45, 145, 0.09);
-  }
-
-  /* Reset right borders then reapply only for 1st col */
-  .ht-trust__item + .ht-trust__item {
-    border-right: none;
-  }
-
-  .ht-trust__item:nth-child(odd) {
-    border-left: 1px solid rgba(95, 45, 145, 0.09);
-  }
-}
-
-/* ── Mobile: compact 2-column ── */
-@media (max-width: 480px) {
-  .ht-trust__inner {
-    padding: 24px 16px;
-  }
-
-  .ht-trust__grid {
-    border-radius: 12px;
-  }
-
-  .ht-trust__item {
-    padding: 14px 12px;
-    gap: 10px;
-  }
-
-  .ht-trust__icon {
-    width: 30px;
-    height: 30px;
-    border-radius: 8px;
-  }
-
-  .ht-trust__icon svg {
-    width: 15px;
-    height: 15px;
-  }
-
-  .ht-trust__title { font-size: 0.86rem; }
-  .ht-trust__desc  { font-size: 0.74rem; }
-}
-
-/* ════════════════════════════════════════════════════════
    FAQ SECTION — accordion
    Isolated: all styles use ht-faq- prefix.
    Remove by deleting FAQSection.jsx + its import.
@@ -3288,7 +3136,7 @@ h3 {
 /* ── Store entrance hero — very narrow (<=480px) ── */
 @media (max-width: 480px) {
   .se-cat {
-    aspect-ratio: 3 / 4.4;
+    aspect-ratio: 3 / 5;
   }
 
   .se-cat__overlay {
@@ -3310,9 +3158,16 @@ h3 {
 
   .se-cat__cta {
     align-self: center;
+    white-space: nowrap;
     padding: 3px 9px;
     font-size: 0.6rem;
   }
+}
+
+/* Extra-narrow: drop the CTA so wrapped text never clips inside the tile */
+@media (max-width: 380px) {
+  .se-cat__cta { display: none; }
+  .se-cat__name { margin-bottom: 2px; }
 }
 
 /* ── /purchase success page ─────────────────────────────────────────────── */

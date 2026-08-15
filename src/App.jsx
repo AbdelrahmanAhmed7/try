@@ -3,7 +3,6 @@ import { landingData } from './data/landingData.js';
 import StoreNavbar from './components/StoreNavbar.jsx';
 import StoreHero from './components/StoreHero.jsx';
 import ShopSection from './components/ShopSection.jsx';
-import TrustSection from './components/TrustSection.jsx';
 import FAQSection from './components/FAQSection.jsx';
 import CountdownTimer from './components/CountdownTimer.jsx';
 import { CheckoutSummaryBar, StickyCartBar } from './components/CartSummary.jsx';
@@ -42,28 +41,6 @@ function SectionFallback({ minHeight = 200 }) {
   return <div className="section-fallback" aria-hidden="true" style={{ minHeight }} />;
 }
 
-function Benefits({ benefits }) {
-  return (
-    <section className="section benefits-section section-below-fold" id="benefits" aria-label="ليه Healthy & Tasty؟">
-      <div className="section-intro centered">
-        <span className="eyebrow">ليه Healthy & Tasty؟</span>
-        <h2>اختيار صحي من غير ما تتنازل عن الطعم</h2>
-      </div>
-      <div className="benefits-band">
-        {benefits.map((benefit) => (
-          <div className="benefit-pill" key={benefit}>
-            <span aria-hidden="true">✓</span>
-            {benefit}
-          </div>
-        ))}
-      </div>
-    </section>
-  );
-}
-
-function Audience({ audience }) { return null; }
-function LoveReasons({ loveReasons }) { return null; }
-
 function Footer({ brand, footer }) {
   return (
     <footer className="site-footer">
@@ -71,8 +48,9 @@ function Footer({ brand, footer }) {
       <p>{brand.tagline}</p>
       <nav className="footer-nav" aria-label="روابط المتجر">
         <a href="#top">الرئيسية</a>
-        <a href="#shop">تسوق الآن</a>
-        <a href="#trust">ليه Healthy &amp; Tasty</a>
+        <a href="#shop-spread">Healthy Spread</a>
+        <a href="#shop-cola">Healthy Cola</a>
+        <a href="#shop-bundles">Bundles</a>
         <a href="#faq">الأسئلة الشائعة</a>
       </nav>
       <span>{footer.note}</span>
@@ -246,7 +224,6 @@ export default function App() {
         <StickyCartBar />
         <StoreHero onSelectCategory={setActiveCategory} />
         <ShopSection activeCategory={activeCategory} onCategoryChange={setActiveCategory} />
-        <TrustSection />
         <FAQSection />
         <CheckoutSummaryBar />
       </main>
