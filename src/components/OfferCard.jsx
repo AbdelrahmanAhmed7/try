@@ -91,19 +91,16 @@ export default function OfferCard({
 
         <h3 className="ht-card__title">{offer.title}</h3>
 
-        {offer.amount
-          ? <p className="ht-card__amount">{offer.amount}</p>
-          : offer.description
-          ? <p className="ht-card__desc">{offer.description}</p>
-          : null
-        }
+        {offer.amount && (
+          <p className="ht-card__amount">{offer.amount}</p>
+        )}
+
+        {offer.description && (
+          <p className="ht-card__desc">{offer.description}</p>
+        )}
 
         {offer.unit && (
           <p className="ht-card__unit">{offer.unit}</p>
-        )}
-
-        {featured && offer.amount && offer.description && (
-          <p className="ht-card__desc">{offer.description}</p>
         )}
 
         {Number.isFinite(offer.shippingFee) && offer.shippingFee > 0 && (

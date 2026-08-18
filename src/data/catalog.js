@@ -7,7 +7,7 @@ import { landingData } from './landingData.js';
  * so the catalog must know about every purchasable offer:
  *   - Healthy Spread offers  (landingData.offers)
  *   - Healthy Cola offers    (landingData.colaCategory.offers)
- *   - Bundles                (landingData.bundleSection.offer, if defined)
+ *   - Bundles                (landingData.bundleSection.offers, if defined)
  *
  * When a new section introduces buyable items, register them here too.
  */
@@ -19,7 +19,7 @@ export function buildCatalog() {
 
   landingData.offers.forEach(add);
   landingData.colaCategory.offers.forEach(add);
-  if (landingData.bundleSection.offer) add(landingData.bundleSection.offer);
+  (landingData.bundleSection.offers ?? []).forEach(add);
 
   return catalog;
 }

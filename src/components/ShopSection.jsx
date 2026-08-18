@@ -36,10 +36,8 @@ function buildItems() {
     offer,
   }));
 
-  const bundleOffer = landingData.bundleSection.offer;
-  const bundles = bundleOffer
-    ? [{ tabId: 'bundles', offer: bundleOffer }]
-    : [];
+  const bundleOffers = landingData.bundleSection.offers ?? [];
+  const bundles = bundleOffers.map((offer) => ({ tabId: 'bundles', offer }));
 
   // Featured deal leads the "all" grid so it's visible immediately.
   return [...bundles, ...spread, ...cola];

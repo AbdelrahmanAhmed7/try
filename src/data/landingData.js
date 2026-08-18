@@ -15,6 +15,7 @@ import offerCombo from '../assets/cola/offers/combo.webp';
 import offerShrink from '../assets/cola/offers/shrink.webp';
 import offerLamma from '../assets/cola/offers/lama.webp';
 import bundleImg from '../assets/bundle/bundle.jpeg';
+import bundleImg2 from '../assets/bundle/bundle2.jpeg';
 
 /** Product shots in carousel / gallery order: أطفال، أوجينال، بروتين، فيجن، بريستيج، جوز هند، زبدة فول سوداني، زبدة فول سوداني عالي البروتين، زبدة فول سوداني شيكولاتة */
 export const productImages = [product4, product1, product2, product3, product6, product7, product5, product8, product9];
@@ -165,33 +166,62 @@ export const landingData = {
     description: 'باقات تجمع منتجاتنا الصحية مع بعض في عرض واحد مناسب',
     image: bundleImg,
     cta: 'Shop Bundles',
-    offer: {
-      id: 'bundles',
-      categoryId: 'bundles',
-      title: 'Healthy Bundle',
-      amount: '٣ برطمانات سبريد + ١ شرنك كولا',
-      unit: 'برطمان 375 جرام + كولا 350 مل',
-      description: '٣ برطمانات Healthy Spread + ١ شرنك Healthy Cola (كولا ٣٥٠ مل)',
-      price: 900,
-      originalPrice: 1200,
-      saving: 300,
-      image: bundleImg,
-      accent: '#f5b51b',
-      badge: '⭐ أفضل قيمة',
-      configuration: {
-        type: 'bundle',
-        spread: {
-          unitsPerBundle: 3,
-          maxFlavors: 9,
-          configuration: { type: 'flavors' },
-        },
-        cola: {
-          unitsPerBundle: 1,
-          unitsPerShrink: 12,
-          configuration: { type: 'colaFlavors' },
+    offers: [
+      {
+        id: 'bundles',
+        categoryId: 'bundles',
+        title: 'Healthy Bundle',
+        amount: '٣ برطمانات سبريد + ١ شرنك كولا',
+        unit: 'برطمان 375 جرام + كولا 350 مل',
+        description: '٣ برطمانات Healthy Spread (375 جرام) + ١ شرنك Healthy Cola (كولا 350 مل)',
+        price: 900,
+        originalPrice: 1200,
+        saving: 300,
+        image: bundleImg,
+        accent: '#f5b51b',
+        badge: '⭐ أفضل قيمة',
+        configuration: {
+          type: 'bundle',
+          spread: {
+            unitsPerBundle: 3,
+            maxFlavors: 9,
+            configuration: { type: 'flavors' },
+          },
+          cola: {
+            unitsPerBundle: 1,
+            unitsPerShrink: 12,
+            configuration: { type: 'colaFlavors' },
+          },
         },
       },
-    },
+      {
+        id: 'bundle2',
+        categoryId: 'bundles',
+        title: 'Bundle 2',
+        amount: '٢ برطمان سبريد + ٦ عبوات كولا',
+        unit: 'برطمان 375 جرام + كولا 350 مل',
+        description: '٢ برطمانات Healthy Spread (375 جرام) + ٦ عبوات Healthy Cola (كولا 350 مل)',
+        price: 650,
+        originalPrice: 750,
+        saving: 100,
+        image: bundleImg2,
+        accent: '#c07a00',
+        badge: '🔥 عرض جديد',
+        configuration: {
+          type: 'bundle',
+          spread: {
+            unitsPerBundle: 2,
+            maxFlavors: 9,
+            configuration: { type: 'flavors' },
+          },
+          cola: {
+            unitsPerBundle: 1,
+            unitsPerShrink: 6,
+            configuration: { type: 'colaFlavors' },
+          },
+        },
+      },
+    ],
   },
   audience: {
     title: 'مناسب لمين؟',
