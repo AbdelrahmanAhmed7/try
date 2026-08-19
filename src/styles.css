@@ -409,10 +409,12 @@ img {
   padding: 12px;
 }
 
-/* Bundle tile — full bleed */
+/* Bundles tile (hero image) — show the full image without aggressive
+   cropping; lighter padding keeps it visible and clean */
 .se-cat:nth-child(3) .se-cat__img img {
-  object-fit: cover;
+  object-fit: contain;
   opacity: 1;
+  padding: 8px;
 }
 
 /* Bottom gradient fade for legibility */
