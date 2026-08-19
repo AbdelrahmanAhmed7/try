@@ -146,7 +146,7 @@ export const landingData = {
         badge: '☀️ عرض محدود',
         amount: '5 زجاجات',
         unit: 'كولا 350 مل',
-        description: '5 زجاجات Healthy Cola (كولا 350 مل)',
+        description: '5 زجاجات Healthy Cola (كولا 350 مل · ليمون نعناع 350 مل)',
         price: 99,
         originalPrice: 125,
         saving: 26,
