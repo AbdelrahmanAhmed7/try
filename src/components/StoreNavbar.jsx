@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import CountdownTimer from './CountdownTimer.jsx';
 
 /**
  * Storefront navigation: brand trust strip + store navbar.
@@ -49,6 +50,8 @@ export default function StoreNavbar({ brand, nav }) {
         <span>💳 الدفع عند الاستلام</span>
         <span>•</span>
         <span>🌿 منتجات صحية مختارة</span>
+        <span>•</span>
+        <CountdownTimer variant="bar" />
       </div>
       <header className="site-header">
         <a className="brand-link" href="#top" aria-label={brand.name}>
