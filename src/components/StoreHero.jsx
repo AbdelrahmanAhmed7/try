@@ -14,7 +14,7 @@
  */
 import spreadImg from '../assets/1.webp';
 import colaImg   from '../assets/cola/products/healthy_cola.webp';
-import bundleImg from '../assets/bundle/bundle.webp';
+import bundleImg from '../assets/bundle/hero2.webp';
 import { scrollToShop } from '../utils/scrollToShop.js';
 
 const CATEGORIES = [
@@ -36,7 +36,7 @@ const CATEGORIES = [
   },
   {
     id:      'bundles',
-    label:   'Bundles',
+    label:   'Healthy Bundles',
     sub:     'أكتر وادفع أقل',
     image:   bundleImg,
     accent:  '#c07a00',
