@@ -6,6 +6,7 @@ import ShopSection from './components/ShopSection.jsx';
 import FAQSection from './components/FAQSection.jsx';
 import CountdownTimer from './components/CountdownTimer.jsx';
 import { CheckoutSummaryBar, StickyCartBar } from './components/CartSummary.jsx';
+import LazyWhenVisible from './components/LazyWhenVisible.jsx';
 import { CartProvider } from './context/CartContext.jsx';
 import { buildCatalog } from './data/catalog.js';
 import { isOrderCompleted, ORDER_ID_KEY } from './utils/orderSession.js';
@@ -224,10 +225,15 @@ export default function App() {
         <StickyCartBar />
         <StoreHero onSelectCategory={setActiveCategory} />
         <ShopSection activeCategory={activeCategory} onCategoryChange={setActiveCategory} />
-        <FAQSection />
+        <LazyWhenVisible minHeight={420}>
+          <FAQSection />
+        </LazyWhenVisible>
         <CheckoutSummaryBar />
       </main>
-      <Footer brand={landingData.brand} footer={landingData.footer} />
+      <CountdownTimer variant="floating" />
+      <LazyWhenVisible minHeight={180}>
+        <Footer brand={landingData.brand} footer={landingData.footer} />
+      </LazyWhenVisible>
     </CartProvider>
   );
 }

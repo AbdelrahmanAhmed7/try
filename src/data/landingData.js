@@ -14,8 +14,8 @@ import offerSummer from '../assets/cola/offers/summer.webp';
 import offerCombo from '../assets/cola/offers/combo.webp';
 import offerShrink from '../assets/cola/offers/shrink.webp';
 import offerLamma from '../assets/cola/offers/lama.webp';
-import bundleImg from '../assets/bundle/bundle.jpeg';
-import bundleImg2 from '../assets/bundle/bundle2.jpeg';
+import bundleImg from '../assets/bundle/bundle.webp';
+import bundleImg2 from '../assets/bundle/bundle2.webp';
 
 /** Product shots in carousel / gallery order: أطفال، أوجينال، بروتين، فيجن، بريستيج، جوز هند، زبدة فول سوداني، زبدة فول سوداني عالي البروتين، زبدة فول سوداني شيكولاتة */
 export const productImages = [product4, product1, product2, product3, product6, product7, product5, product8, product9];

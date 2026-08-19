@@ -14,7 +14,7 @@
  */
 import spreadImg from '../assets/1.webp';
 import colaImg   from '../assets/cola/products/healthy_cola.webp';
-import bundleImg from '../assets/bundle/bundle.jpeg';
+import bundleImg from '../assets/bundle/bundle.webp';
 import { scrollToShop } from '../utils/scrollToShop.js';
 
 const CATEGORIES = [
@@ -79,8 +79,11 @@ export default function StoreHero({ onSelectCategory }) {
               <img
                 src={cat.image}
                 alt={cat.label}
+                width={600}
+                height={800}
                 loading={cat.id === 'spread' ? 'eager' : 'lazy'}
                 decoding="async"
+                fetchPriority={cat.id === 'spread' ? 'high' : 'auto'}
               />
             </div>
 

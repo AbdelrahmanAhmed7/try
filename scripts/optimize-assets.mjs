@@ -25,14 +25,27 @@ const images = [
   'cola/offers/lama.jpeg',
   'cola/offers/shrink.jpeg',
   'cola/offers/summer.jpeg',
+  'el3ard.jpeg', '3pieces.jpeg', '4pieces.jpeg',
+  'bundle/bundle.jpeg', 'bundle/bundle2.jpeg',
 ];
+
+/** Resize to max width (keeps aspect ratio). null = keep original size. */
+const resize = (file) => {
+  if (file.startsWith('cola/offers/')) return { width: 800, withoutEnlargement: true };
+  if (file.startsWith('bundle/')) return { width: 1000, withoutEnlargement: true };
+  if (file === 'el3ard.jpeg' || file === '3pieces.jpeg' || file === '4pieces.jpeg') {
+    return { width: 800, withoutEnlargement: true };
+  }
+  return null;
+};
 
 for (const file of images) {
   const input = join(assets, file);
   const out = join(assets, file.replace(/\.(png|jpe?g)$/i, '.webp'));
-  await sharp(input)
-    .webp({ quality: 82 })
-    .toFile(out);
+  let pipeline = sharp(input);
+  const r = resize(file);
+  if (r) pipeline = pipeline.resize(r);
+  await pipeline.webp({ quality: 75 }).toFile(out);
   console.log(`webp: ${basename(out)}`);
 }
 

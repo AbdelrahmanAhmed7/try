@@ -409,6 +409,12 @@ img {
   padding: 12px;
 }
 
+/* Bundle tile — full bleed */
+.se-cat:nth-child(3) .se-cat__img img {
+  object-fit: cover;
+  opacity: 1;
+}
+
 /* Bottom gradient fade for legibility */
 .se-cat::after {
   content: '';
@@ -3025,29 +3031,12 @@ h3 {
   .ht-tab { flex-shrink: 0; }
 
   /* Card adjustments on small screens */
-  .ht-card__media img { padding: 12px; }
   .ht-card__body { padding: 10px 12px 12px; }
   .ht-card__title { font-size: 0.88rem; }
   .ht-card__amount, .ht-card__desc { font-size: 0.76rem; }
-  .ht-card__unit { font-size: 0.66rem; padding: 1px 7px; }
+  .ht-card__unit { font-size: 0.66rem; }
   .ht-card__price { font-size: 1.2rem; }
-  .ht-card__original { font-size: 0.72rem; }
-  .ht-card__saving { font-size: 0.7rem; padding: 2px 8px; }
   .ht-card__atc { font-size: 0.82rem; min-height: 44px; }
-  .ht-card__shipping { font-size: 0.66rem; padding: 2px 8px; }
-  .ht-card--featured .ht-card__amount { padding: 4px 8px; font-size: 0.7rem; }
-
-  /* Keep the corner badge inside the card on narrow screens */
-  .ht-card__badge {
-    top: 10px;
-    right: 10px;
-    max-width: calc(100% - 20px);
-    padding: 3px 8px;
-    font-size: 0.6rem;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
 
   .section {
     padding: 60px 20px;
