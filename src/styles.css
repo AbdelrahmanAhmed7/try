@@ -839,15 +839,7 @@ img {
   font-size: 0.78rem;
 }
 
-.ht-card--featured .ht-card__atc {
-  background: linear-gradient(135deg, var(--gold), var(--gold-2));
-  color: var(--purple-950);
-  box-shadow: 0 6px 18px rgba(245, 181, 27, 0.35);
-}
-
-.ht-card--featured .ht-card__atc:hover {
-  opacity: 0.92;
-}
+/* ── Featured (bundle) card keeps the standard purple CTA ── */
 
 /* ════════════════════════════════════════════════════════
    FAQ SECTION — accordion
