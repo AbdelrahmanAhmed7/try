@@ -3040,6 +3040,18 @@ h3 {
   .ht-card__price { font-size: 1.2rem; }
   .ht-card__atc { font-size: 0.82rem; min-height: 44px; }
 
+  /* Badge: compact so long labels never clip inside narrow cards */
+  .ht-card__badge {
+    top: 8px;
+    right: 8px;
+    padding: 3px 8px;
+    font-size: 0.58rem;
+    max-width: calc(100% - 16px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
   .section {
     padding: 60px 20px;
   }

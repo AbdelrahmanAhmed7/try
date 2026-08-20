@@ -206,7 +206,7 @@ export const landingData = {
         saving: 200,
         image: bundleImg2,
         accent: '#c07a00',
-        badge: '🔥 عرض جديد',
+        badge: '🔥 جديد',
         configuration: {
           type: 'bundle',
           spread: {
@@ -302,7 +302,7 @@ export const landingData = {
       unitsPerPack: 4,
       maxFlavors: 9,
       configuration: { type: 'flavors' },
-      badge: 'أكبر توفير 🔥',
+      badge: 'توفير 🔥',
       accent: '#0f766e',
       note: '',
     },
