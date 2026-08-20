@@ -19,7 +19,7 @@ export function buildCatalog() {
 
   landingData.offers.forEach(add);
   landingData.colaCategory.offers.forEach(add);
-  (landingData.bundleSection.offers ?? []).forEach(add);
+  if (landingData.bundleSection.offers) landingData.bundleSection.offers.forEach(add);
 
   return catalog;
 }

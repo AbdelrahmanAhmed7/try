@@ -36,7 +36,7 @@ function buildItems() {
     offer,
   }));
 
-  const bundleOffers = landingData.bundleSection.offers ?? [];
+  const bundleOffers = landingData.bundleSection.offers || [];
   const bundles = bundleOffers.map((offer) => ({ tabId: 'bundles', offer }));
 
   // Featured deal leads the "all" grid so it's visible immediately.
@@ -68,6 +68,7 @@ export default function ShopSection({ activeCategory, onCategoryChange }) {
       {/* ── Section header ── */}
       <div className="ht-shop__header">
         <h2 className="ht-shop__title">تسوق منتجاتنا</h2>
+        <p className="ht-shop__sub">كل برطمان سبريد 375 جرام · كل زجاجة كولا 350 مل · الشرنك = 12 زجاجة</p>
       </div>
 
       {/* ── Category tabs ── */}

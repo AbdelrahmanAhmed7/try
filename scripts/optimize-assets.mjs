@@ -16,26 +16,22 @@ const publicDir = join(root, 'public');
 
 const images = [
   '1.png', '2.png', '3.png', '4.png', '5.png',
-  '3ard1.jpeg', '3ard2.jpeg', 'logo.png',
+  '3ard.jpeg', '3ard2.jpeg', '3ard3.jpeg', 'logo.png',
   'beanut_butter.png', 'beanut_butter_high_protien.png', 'coconut.png', 'prestiege.png',
-  'cola/products/can.png',
   'cola/products/healthy_cola.png',
   'cola/products/healthy_lemon.png',
   'cola/offers/combo.jpeg',
   'cola/offers/lama.jpeg',
   'cola/offers/shrink.jpeg',
   'cola/offers/summer.jpeg',
-  'el3ard.jpeg', '3pieces.jpeg', '4pieces.jpeg',
-  'bundle/bundle.jpeg', 'bundle/bundle2.jpeg',
+  'bundle/bundle.jpeg', 'bundle/bundle2.jpeg', 'bundle/hero2.png',
 ];
 
 /** Resize to max width (keeps aspect ratio). null = keep original size. */
 const resize = (file) => {
   if (file.startsWith('cola/offers/')) return { width: 800, withoutEnlargement: true };
   if (file.startsWith('bundle/')) return { width: 1000, withoutEnlargement: true };
-  if (file === 'el3ard.jpeg' || file === '3pieces.jpeg' || file === '4pieces.jpeg') {
-    return { width: 800, withoutEnlargement: true };
-  }
+  if (file.startsWith('3ard')) return { width: 800, withoutEnlargement: true };
   return null;
 };
 

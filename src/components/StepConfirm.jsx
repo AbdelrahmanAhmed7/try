@@ -315,7 +315,8 @@ export default function StepConfirm({ form, cartItems: initialItems, onBack, onS
                   {item.qty > 1 ? ` × ${item.qty}` : ''}
                 </h2>
               </div>
-              <p>{item.offer.description}</p>
+              {item.offer.description && <p>{item.offer.description}</p>}
+              {item.offer.unit && <p className="confirm-unit">{item.offer.unit}</p>}
               <div className="confirm-price">
                 <strong>{formatPrice(item.offer.price * item.qty)}</strong>
                 <s>{formatPrice(item.offer.originalPrice * item.qty)}</s>

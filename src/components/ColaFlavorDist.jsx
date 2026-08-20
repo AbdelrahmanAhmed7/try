@@ -66,7 +66,7 @@ export default function ColaFlavorDist({
     <>
       <div className="cfd-summary">
         <span className="cfd-chip">
-          {toArabic(total)} عبوة · {toArabic(cola)} كولا · {toArabic(lemon)} ليمون نعناع
+          {toArabic(total)} زجاجة · {toArabic(cola)} كولا · {toArabic(lemon)} ليمون نعناع
         </span>
         <span className="cfd-hint">اضغط «نص نص» للاختيار السريع</span>
       </div>

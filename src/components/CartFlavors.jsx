@@ -56,11 +56,11 @@ function BundleConfig({
         <div className="bundle-config-panel bundle-config-panel--cola">
           <div className="bundle-config-header">
             <span className="bundle-config-num" aria-hidden="true">🥤</span>
-            <p className="bundle-config-title">اختار توزيع عبوات الكولا</p>
+            <p className="bundle-config-title">اختار توزيع زجاجات الكولا</p>
             <span className="bundle-config-count">Healthy Cola</span>
           </div>
           <p className="bundle-config-sub">
-            شرنك ×{item.qty} · {toArabic(colaTotal)} عبوة (كولا / ليمون نعناع)
+            شرنك ×{item.qty} · {toArabic(colaTotal)} زجاجة (كولا / ليمون نعناع)
           </p>
           <ColaFlavorDist
             embedded
@@ -95,7 +95,7 @@ export default function CartFlavors({
         <span className="fp-step-num" aria-hidden="true">🍫</span>
         <div>
           <p className="fp-step-title">اختار النكهات والكميات</p>
-          <p className="fp-step-sub">وزّع البرطمانات والعبوات لكل عرض في سلتك</p>
+          <p className="fp-step-sub">وزّع البرطمانات والزجاجات لكل عرض في سلتك</p>
         </div>
       </div>
 

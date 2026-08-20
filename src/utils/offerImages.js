@@ -1,7 +1,7 @@
 const loaders = {
-  'two-jars':   () => import('../assets/el3ard.webp'),
-  'three-jars': () => import('../assets/3pieces.webp'),
-  'four-jars':  () => import('../assets/4pieces.webp'),
+  'two-jars':   () => import('../assets/3ard.webp'),
+  'three-jars': () => import('../assets/3ard2.webp'),
+  'four-jars':  () => import('../assets/3ard3.webp'),
 };
 
 const cache = new Map();
