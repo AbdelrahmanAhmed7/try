@@ -20,7 +20,7 @@ function getRoute() {
 
 function getCategoryFromHash() {
   const m = window.location.hash.match(/^#shop-(spread|cola|bundles)$/);
-  return m ? m[1] : 'all';
+  return m ? m[1] : 'spread';
 }
 
 function navigate(path) {
@@ -128,7 +128,7 @@ export default function App() {
   useEffect(() => {
     const onHashChange = () => {
       const cat = getCategoryFromHash();
-      if (cat !== 'all') setActiveCategory(cat);
+      setActiveCategory(cat);
       const hash = window.location.hash;
       if (hash === '#shop' || hash.startsWith('#shop-')) {
         requestAnimationFrame(scrollToShop);

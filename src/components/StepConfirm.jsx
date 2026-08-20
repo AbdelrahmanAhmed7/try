@@ -77,7 +77,7 @@ export function buildFlavorSummary(items, itemFlavors, itemCola) {
         const total = colaDistributionTotal(item);
         const cola = itemCola[i]?.cola ?? 0;
         const lemon = Math.max(0, total - cola);
-        return `${item.offer.title} ×${item.qty} (Spread: ${spreadDesc} | Cola: ${cola} كولا + ${lemon} ليمون)`;
+        return `${item.offer.title} ×${item.qty} (سبريد: ${spreadDesc} | كولا: ${cola} كولا + ${lemon} ليمون نعناع)`;
       }
       if (offerNeedsFlavors(item.offer)) return describeFlavors(itemFlavors[i]);
       if (offerNeedsColaConfig(item.offer)) {

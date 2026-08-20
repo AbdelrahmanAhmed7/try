@@ -13,7 +13,6 @@ import { useCart } from '../context/CartContext.jsx';
 import { loadOfferImage } from '../utils/offerImages.js';
 
 export const TABS = [
-  { id: 'all',     label: 'الكل' },
   { id: 'spread',  label: 'Healthy Spread' },
   { id: 'cola',    label: 'Healthy Cola' },
   { id: 'bundles', label: 'Bundles' },
@@ -54,13 +53,11 @@ export default function ShopSection({ activeCategory, onCategoryChange }) {
   }, []);
 
   const filtered = useMemo(
-    () => activeCategory === 'all'
-      ? ALL_ITEMS
-      : ALL_ITEMS.filter((item) => item.tabId === activeCategory),
+    () => ALL_ITEMS.filter((item) => item.tabId === activeCategory),
     [activeCategory],
   );
 
-  const showCatLabel = activeCategory === 'all';
+  const showCatLabel = false;
 
   return (
     <section className="ht-shop" id="shop" dir="rtl" aria-label="تسوق المنتجات">

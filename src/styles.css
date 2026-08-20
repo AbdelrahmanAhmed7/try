@@ -467,7 +467,7 @@ img {
   align-self: flex-start;
   padding: 6px 14px;
   border-radius: 50px;
-  background: var(--cat-accent, var(--gold));
+  background: var(--purple-700);
   color: #fff;
   font-size: clamp(0.72rem, 1vw, 0.82rem);
   font-weight: 800;
@@ -759,7 +759,7 @@ img {
   padding: 0 16px;
   border-radius: 50px;
   border: 0;
-  background: var(--card-accent, var(--purple-700));
+  background: var(--purple-700);
   color: #fff;
   font-size: 0.88rem;
   font-weight: 800;
@@ -778,8 +778,8 @@ img {
 
 .ht-card__atc--ghost {
   background: transparent;
-  color: var(--card-accent, var(--purple-700));
-  border: 2px solid var(--card-accent, var(--purple-700));
+  color: var(--purple-700);
+  border: 2px solid var(--purple-700);
 }
 
 /* ════════════════════════════════════════════════════════
@@ -1949,18 +1949,18 @@ h3 {
   padding: 16px;
   border: 0;
   border-radius: 50px;
-  background: var(--gold);
-  color: var(--purple-950);
+  background: var(--purple-700);
+  color: #fff;
   font-size: 1.05rem;
   font-weight: 800;
   cursor: pointer;
-  box-shadow: 0 6px 24px rgba(245, 181, 27, 0.35);
+  box-shadow: 0 6px 24px rgba(95, 45, 145, 0.35);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .next-btn:hover {
   transform: scale(1.02);
-  box-shadow: 0 8px 30px rgba(245, 181, 27, 0.45);
+  box-shadow: 0 8px 30px rgba(95, 45, 145, 0.45);
 }
 
 .section-intro.light .eyebrow {
